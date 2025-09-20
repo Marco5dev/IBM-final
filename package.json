@@ -1,0 +1,25 @@
+{
+  "name": "secondchance-backend",
+  "version": "1.0.0",
+  "description": "SecondChance backend for capstone project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed": "node seed/seed.js",
+    "count": "node seed/count.js",
+    "ci": "node -e \"console.log('CI smoke test: node ok')\"",
+    "test": "node -e \"console.log('no-op tests')\""
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.18.1",
+    "multer": "^2.0.2",
+    "natural": "^8.1.0",
+    "bcrypt": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

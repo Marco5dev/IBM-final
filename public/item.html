@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Item - SecondChance</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Landing</a> |
+    <a href="/main.html">Main</a> |
+    <a href="/register.html">Register</a> |
+    <a href="/login.html">Login</a>
+    <span id="user-span" style="float:right"></span>
+  </nav>
+  <main>
+    <div id="content">Loading...</div>
+  </main>
+  <script>
+    async function load(){
+      const p = new URLSearchParams(location.search);
+      const id = p.get('id');
+      const res = await fetch('/api/secondchance/items/' + id);
+      const i = await res.json();
+      document.getElementById('content').innerHTML = `<h1>${i.title}</h1><p>${i.description}</p><p>Category: ${i.category}</p>`;
+    }
+    load();
+  </script>
+  <script src="/client.js"></script>
+</body>
+</html>
